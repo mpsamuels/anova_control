@@ -84,4 +84,5 @@ While the Anova cooker is not powered on, the status will be reported as 'unknow
 
 # To Do
 Implement Start/Edit/Stop cook functionality to allow the cooker to be controlled from HA. This script currently only reads info from the device and reports on it.
+
 Document other potential sensors to allow better integration into HA.
