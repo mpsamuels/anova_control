@@ -6,7 +6,7 @@ This may work with other Anova cookers but has only been tested with the Anova C
 # Acknowledgements
 This wouldn't have been possible without:
 
-[danodemano's](https://github.com/danodemano/) [anova_control.py script](https://github.com/danodemano/anova.py/blob/master/anova_control.py) which works with older Anova cooker models and provided a starting point plus a lot of the inspiration for this CLI wrapper
+[danodemano's](https://github.com/danodemano/) [anova_control.py](https://github.com/danodemano/anova.py/blob/master/anova_control.py) script which works with older Anova cooker models and provided a starting point plus a lot of the inspiration for this CLI wrapper
 
 [ammarzuberi's](https://github.com/ammarzuberi/) [pyanova-api](https://github.com/ammarzuberi/pyanova-api) Python module which this wrapper relies on to operate.
 
