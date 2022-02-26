@@ -70,6 +70,7 @@ anova_control.py requires the following arguments to run:
 This will output the full suite of information available from [pyanova-api](https://github.com/ammarzuberi/pyanova-api) in the format requested, plain text or JSON.
 
 ## Use with Home Assistant
+### Command line sensor
 Create a [Home Assistant command line sensor](https://www.home-assistant.io/integrations/sensor.command_line/) to pull the JSON output into [Home Assistant](https://www.home-assistant.io/) as the entity 'sensor.anova_status':
 ```
 platform: command_line
@@ -92,6 +93,67 @@ value_template: '{{value_json.current_temp}}'
 scan_interval: 1
 ```
 While the Anova cooker is not powered on, the status will be reported as 'unknown' in Home Assistant and only the 'friendly_name: Anova Status' attribute will be reported. Once the device is powered on, all attributes should be visible.
+
+### Template Sensors
+The following template sensors pull the individual values from the command line sensor to read each value as a specific entity:
+```
+platform: template
+sensors:
+  anova_job_status:
+    friendly_name: 'Anova job status'
+    value_template:
+        '{{ states.sensor.anova_status.attributes.job_status }}'
+  anova_job_time_remaining:
+    friendly_name: 'Anova job time remaining'
+    unit_of_measurement: 'min'
+    value_template:
+        '{{ states.sensor.anova_status.attributes.job_time_remaining/60 | round(0) }}'
+  anova_heater_duty_cycle:
+    friendly_name: 'Anova heater duty cycle'
+    unit_of_measurement: '°C'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.heater_duty_cycle }}'
+  anova_motor_duty_cycle:
+    friendly_name: 'Anova motor duty cycle'
+    unit_of_measurement: '°C'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.motor_duty_cycle }}'
+  anova_wifi_connected:
+    friendly_name: 'Anova wifi connected'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.wifi_connected }}'
+  anova_wifi_ssid:
+    friendly_name: 'Anova wifi ssid'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.wifi_ssid }}'
+  anova_water_leak:
+    friendly_name: 'Anova water leak'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.water_leak }}'
+  anova_water_level_low:
+    friendly_name: 'Anova water level low'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.water_level_low }}'
+  anova_water_level_critical:
+    friendly_name: 'Anova water level critical'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.water_level_critical }}'
+  anova_heater_temp:
+    friendly_name: 'Anova heater_temp'
+    unit_of_measurement: '°C'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.heater_temp }}'
+  anova_triac_temp:
+    friendly_name: 'Anova triac temp'
+    unit_of_measurement: '°C'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.triac_temp }}'
+  anova_water_temp:
+    friendly_name: 'Anova water temp'
+    unit_of_measurement: '°C'
+    value_template: 
+        '{{ states.sensor.anova_status.attributes.water_temp }}'
+```
 
 # To Do
 Implement Start/Edit/Stop cook functionality to allow the cooker to be controlled from HA. This script currently only reads info from the device and reports on it.
