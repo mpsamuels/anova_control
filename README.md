@@ -73,7 +73,7 @@ This will output the full suite of information available from [pyanova-api](http
 Create a [Home Assistant command line sensor](https://www.home-assistant.io/integrations/sensor.command_line/) to pull the JSON output into [Home Assistant](https://www.home-assistant.io/) as the entity 'sensor.anova_status':
 ```
 platform: command_line
-command: ./scripts/anova_control/anova_control.py -o j -i <cooker ID> -u <username> -p <password>
+command: 'python ./scripts/anova_control/anova_control.py -o j -i <cooker ID> -u <username> -p <password>'
 name: Anova Status
 json_attributes:
     - job_status
