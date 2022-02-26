@@ -35,6 +35,10 @@ To ensure the installation persists:
 - First, add the [hassio addons development](https://github.com/home-assistant/hassio-addons-development) repo to your HA installation
 - Install the 'Custom deps deployment' add-on
 - In the add-on configuration, add '- pyanova-api' under the 'pypi' heading
+```
+pypi:
+  - pyanova-api
+```
 - Save the configuration
 - Start the add-on
 - Ensure the add-on is set to start on boot.
