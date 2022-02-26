@@ -59,7 +59,7 @@ If using Home Assistant, cloning this repo into the \config\scripts folder is re
 ## Script usage
 anova_control.py requires the following arguments to run:
 
--o/--output [r/j/raw/json] Set whether the output is in raw text string or JSON format. JSON is recommended for Home Assistant integration
+-o/--output [r/j/raw/json] Set whether the output is presented as a raw text string or in JSON format. JSON is recommended for Home Assistant integration
 
 -i/--id/--cooker_id [Anova Device ID] 
 
