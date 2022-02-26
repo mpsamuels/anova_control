@@ -15,28 +15,22 @@ From the command line, run
 ```pip install pyanova-api```
 
 #### Manual install
-First, clone the GitHub repository:
+- Clone the GitHub repository:
 ```git clone https://github.com/ammarzuberi/pyanova-api.git```
-
-Enter the newly created `pyanova-api` directory and run:
+- Enter the newly created `pyanova-api` directory and run:
 ```pip install .```
-
-This should install `pyanova-api` on your system. You can use it in your own Python scripts like so:
-```python
-import anova
-```
 
 #### Home Assistant Docker container install
 If running Home Assistant within a Docker container, the above installation methods will see pyanova-api removed on each reboot or upgrade of the container.
 
 To ensure the installation persists:
 
-First, add the hassio addons development repo (https://github.com/home-assistant/hassio-addons-development) to your HA installation
-Install the 'Custom deps deployment' add-on
-In the add-on configuration, add '- pyanova-api' under the 'pypi' heading
-Save the configuration
-Start the add-on
-Ensure the add-on is set to start on boot.
+- First, add the hassio addons development repo (https://github.com/home-assistant/hassio-addons-development) to your HA installation
+- Install the 'Custom deps deployment' add-on
+- In the add-on configuration, add '- pyanova-api' under the 'pypi' heading
+- Save the configuration
+- Start the add-on
+- Ensure the add-on is set to start on boot.
 
 ### Find your cooker_id
 You can find your cooker's device ID from the Anova app:
@@ -52,8 +46,13 @@ Once all pre-requisites are met, clone this repository or copy anova_control.py 
 If using Home Assistant, cloning this repo into the \config\scripts folder is recommended or copy anova_control.py to  \config\scripts\anova_control\anova_control.py.
 
 ## Script usage
-anova_control.py requires the following arguments:
+anova_control.py requires the following arguments to run:
+
 -o/--output [r/j/raw/json] Set whether the output is in raw text string or JSON format. JSON is recommended for Home Assistant integration
+
 -i/--id/--cooker_id [Anova Device ID] 
+
 -u/--username/-e/--email [email address used to login to anovaculinary.io account]
+
 -p/--password [password used to login to anovaculinary.io account]
+
