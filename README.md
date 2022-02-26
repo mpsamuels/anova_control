@@ -56,3 +56,27 @@ anova_control.py requires the following arguments to run:
 
 -p/--password [password used to login to anovaculinary.io account]
 
+This will output the full suite of information available from pyanova-api in the format requested, plain text or JSON.
+
+## Use with Home Assistant
+Create a command line sensor to pull the JSON output into Home Assistant:
+```
+platform: command_line
+command: ./scripts/anova_control/anova_control.py -o j -i <cooker ID> -u <username> -p <password>
+name: Anova Status
+json_attributes:
+    - job_status
+    - job_time_remaining
+    - heater_duty_cycle
+    - motor_duty_cycle
+    - wifi_connected
+    - wifi_ssid
+    - water_leak
+    - water_level_low
+    - water_level_critical
+    - heater_temp
+    - triac_temp
+    - water_temp
+value_template: '{{value_json.current_temp}}'
+scan_interval: 1
+```
