@@ -1,5 +1,5 @@
 # Anova_controller.py
-A Python CLI wrapper for pyanova-api module (https://github.com/ammarzuberi/pyanova-api) to interface with the Anova private API used by Anova Precision Cooker Pro. Particularly intended for integrating an Anova Cooker Pro with Home Assistant.
+A Python CLI wrapper for [pyanova-api](https://github.com/ammarzuberi/pyanova-api) module to interface with the Anova private API used by Anova Precision Cooker Pro. Particularly intended for integrating an Anova Cooker Pro with Home Assistant.
 
 This may work with other Anova cookers but has only been tested with the Anova Cooker Pro.
 
@@ -13,7 +13,7 @@ This wouldn't have been possible without:
 # How to use it
 
 ## Prerequisites
-pyanova-api (https://github.com/ammarzuberi/pyanova-api) must be installed for this script to work:
+[pyanova-api](https://github.com/ammarzuberi/pyanova-api) must be installed for this script to work:
 
 ### Install pyanova-api Python module
 
@@ -32,7 +32,7 @@ If running Home Assistant within a Docker container, the above installation meth
 
 To ensure the installation persists:
 
-- First, add the hassio addons development repo (https://github.com/home-assistant/hassio-addons-development) to your HA installation
+- First, add the [hassio addons development](https://github.com/home-assistant/hassio-addons-development) repo to your HA installation
 - Install the 'Custom deps deployment' add-on
 - In the add-on configuration, add '- pyanova-api' under the 'pypi' heading
 - Save the configuration
