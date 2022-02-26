@@ -3,6 +3,13 @@ A Python CLI wrapper for pyanova-api module (https://github.com/ammarzuberi/pyan
 
 This may work with other Anova cookers but has only been tested with the Anova Cooker Pro.
 
+# Acknowledgements
+This wouldn't have been possible without
+
+[danodemano's](https://github.com/danodemano/) [anova_control.py script] (https://github.com/danodemano/anova.py/blob/master/anova_control.py) which works with older Anova cooker models and provided a starting point plus a lot of the inspiration for this CLI wrapper
+
+[ammarzuberi's] (https://github.com/ammarzuberi/) [pyanova-api] (https://github.com/ammarzuberi/pyanova-api) Python module which this wrapper relies on to operate.
+
 # How to use it
 
 ## Prerequisites
