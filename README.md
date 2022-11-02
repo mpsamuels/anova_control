@@ -59,7 +59,7 @@ If using Home Assistant, cloning this repo into the \config\scripts folder is re
 ## Script usage
 anova_control.py requires the following arguments to run:
 
--o/--output [r/j/raw/json] Set whether the output is presented as a raw text string or in JSON format. JSON is recommended for Home Assistant integration
+-o/--output [r/j/raw/json/c/cook] Set whether the output is a raw text string or JSON output of the cookers current state, or new cook settings applied to your Anova cooker! JSON output is recommended for Home Assistant sensor integration
 
 -i/--id/--cooker_id [Anova Device ID] 
 
@@ -67,7 +67,11 @@ anova_control.py requires the following arguments to run:
 
 -p/--password [password used to login to anovaculinary.io account]
 
-This will output the full suite of information available from [pyanova-api](https://github.com/ammarzuberi/pyanova-api) in the format requested, plain text or JSON.
+--time [(only required if o = c/cook) cook time in minutes]
+
+--temp [(only required if o = c/cook) cook temp in C]
+
+This will either output the full suite of information available from [pyanova-api](https://github.com/ammarzuberi/pyanova-api) in the format requested, plain text or JSON, or start/update a cook on your Anova cooker.
 
 ## Use with Home Assistant
 ### Command line sensor
@@ -156,6 +160,4 @@ sensors:
 ```
 
 # To Do
-Implement Start/Edit/Stop cook functionality to allow the cooker to be controlled from HA. This script currently only reads info from the device and reports on it.
-
 Document other potential sensors to allow better integration into HA.
